@@ -95,7 +95,7 @@ public class SharedPreferenceGenerator implements Generator {
         MethodSpec.Builder builder =  MethodSpec.constructorBuilder()
                 .addModifiers(Modifier.PUBLIC)
                 .addParameter(ParameterSpec.builder(contextClassName, VAR_CONTEXT)
-                        .addAnnotation(AnnotationSpec.builder(ClassName.get("android.support.annotation", "NonNull")).build())
+                        .addAnnotation(AnnotationSpec.builder(ClassName.get("androidx.annotation", "NonNull")).build())
                         .build()
                 )
                 .addStatement("$T.requireNonNull($L, $S)", ClassName.get(Objects.class), VAR_CONTEXT, "Context must not be null");
